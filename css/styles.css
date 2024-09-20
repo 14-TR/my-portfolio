@@ -34,4 +34,89 @@ footer {
 a {
     text-decoration: none;
 }
-    
+
+/* Orbiting Headshot Section */
+.orbit-section {
+    background-color: #000000;
+    padding: 60px 0;
+}
+
+.orbit-section h2 {
+    margin-bottom: 30px;
+}
+
+/* Container for the center photo and orbiting images */
+#orbit-container {
+    position: relative;
+    width: 400px; /* Adjust the width to give enough space for the orbit */
+    height: 400px;
+    margin: 0 auto;
+    perspective: 1000px; /* 3D Perspective */
+}
+
+/* Center photo (headshot) */
+.center-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the headshot perfectly */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    background-color: #00000000;
+}
+
+/* Orbiting images */
+.orbiting-photo {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    border-radius: 50%;
+    animation: orbit 10s infinite linear; /* Smooth orbit animation */
+    transform-origin: center; /* Center the orbit 150px away from the headshot */
+}
+
+.orbiting-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Different starting positions for orbiting images */
+.orbit-1 {
+    top: 10%;
+    left: 50%;
+    animation-delay: 0s;
+}
+
+.orbit-2 {
+    top: 50%;
+    left: 90%;
+    animation-delay: 2s;
+}
+
+.orbit-3 {
+    top: 90%;
+    left: 50%;
+    animation-delay: 4s;
+}
+
+.orbit-4 {
+    top: 50%;
+    left: 10%;
+    animation-delay: 6s;
+}
+
+/* Keyframe animation for the orbiting effect */
+@keyframes orbit {
+    0% {
+        transform: rotate(0deg) translateX(150px); /* Set the orbit radius to 150px */
+    }
+    100% {
+        transform: rotate(23deg) translateX(150px); /* Full rotation */
+    }
+}
+

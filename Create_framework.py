@@ -14,7 +14,6 @@ files = {
     "my-portfolio/about.html": "<!-- About Page HTML -->",
     "my-portfolio/portfolio.html": "<!-- Portfolio Page HTML -->",
     "my-portfolio/contact.html": "<!-- Contact Page HTML -->",
-    "my-portfolio/blog.html": "<!-- Blog Page HTML -->",
     "my-portfolio/css/styles.css": "/* Custom CSS file */",
     "my-portfolio/js/scripts.js": "// JavaScript file",
     "my-portfolio/data/projects.json": "{\n\t\"projects\": []\n}",
