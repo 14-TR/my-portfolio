@@ -1,22 +1,41 @@
-# Personal Portfolio Project
-
 ## Folder Structure Overview
-
 my-portfolio/
-│
-├── css/
-│   └── styles.css          # For all your custom styles
-├── js/
-│   └── scripts.js          # For JavaScript and interactivity
-├── images/                 # Store all your images (headshot, project images, etc.)
-├── data/
-│   ├── projects.json       # JSON file with project details
-│   └── events.xml          # XML file with events or additional info
-├── index.html              # Home page
-├── about.html              # About page
-├── portfolio.html          # Portfolio page
-├── contact.html            # Contact page
-├── blog.html               # Optional blog or extra page
-└── README.md               # Instructions and documentation -- you are here
-
-
+│   └── README.md
+│   ├── main/
+│   │   ├── css/
+│   │   │   └── styles.css
+│   │   ├── data/
+│   │   │   └── events.xml
+│   │   │   └── projects.json
+│   │   ├── html/
+│   │   │   └── about.html
+│   │   │   └── blog.html
+│   │   │   └── contact.html
+│   │   │   └── gallery.html
+│   │   │   └── index.html
+│   │   │   └── navbar.html
+│   │   │   └── portfolio.html
+│   │   ├── images/
+│   │   │   └── Dustdevil_Vid.MP4
+│   │   │   └── FamilySunset.JPEG
+│   │   │   └── Fire_Headshot.JPEG
+│   │   │   └── GNP_mnt.JPEG
+│   │   │   └── Great_Northern.JPEG
+│   │   │   └── Headshot.png
+│   │   │   └── Jumping_Ram.png
+│   │   │   └── Khal_Art.JPEG
+│   │   │   └── Landscape_Burn.JPEG
+│   │   │   └── LFA.JPEG
+│   │   │   └── Ls8_Map.png
+│   │   │   └── MtRosa_Gif.gif
+│   │   │   └── Muley_In_Velvet.JPEG
+│   │   │   └── Richatt.JPEG
+│   │   │   └── Sietch.JPEG
+│   │   │   └── Sunset_Big.JPEG
+│   │   ├── js/
+│   │   │   └── globe.js
+│   │   │   └── navbar.js
+│   │   │   └── scripts.js
+│   ├── utils/
+│   │   └── Create_framework.py
+│   │   └── gen_md.py

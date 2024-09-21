@@ -7,3 +7,14 @@ document.querySelectorAll('.orbiting-photo').forEach(function(photo) {
         this.style.animationDuration = '10s'; // Return to normal speed
     });
 });
+
+// Smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
