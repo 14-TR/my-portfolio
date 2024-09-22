@@ -1,0 +1,217 @@
+/* Existing espionage theme styles */
+
+/* Ensure custom styles take precedence over Bootstrap */
+body {
+    background: radial-gradient(circle, #0f0f0f, #050505); /* Dark gradient background */
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font for typewriter aesthetic */
+    color: #00ff00 !important; /* Neon green text */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Static noise overlay */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/noise-texture.png') repeat;
+    opacity: 0.05; /* Subtle static effect */
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #121212 !important;
+    border-bottom: 1px solid #00ff00 !important;
+}
+
+.navbar a {
+    color: #00ff00 !important;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ff0000 !important; /* Red hover effect */
+}
+
+.navbar-toggler {
+    border-color: #00ff00 !important;
+}
+
+.navbar-toggler-icon {
+    background-color: #00ff00 !important; /* Neon green for toggler */
+}
+
+/* Hero Section */
+.hero {
+    background: url('images/hero-background.jpg') no-repeat center center/cover !important;
+    padding: 100px 0;
+    color: #00ff00 !important;
+    text-shadow: 0px 0px 10px #00ff00;
+}
+
+.hero h1, .hero p {
+    text-shadow: 0 0 8px #00ff00 !important;
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: transparent !important;
+    border: 2px solid #00ff00 !important;
+    color: #00ff00 !important;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #00ff00 !important;
+    color: #000 !important;
+}
+
+.btn-secondary {
+    background-color: transparent !important;
+    border: 2px solid #00ff00 !important;
+    color: #00ff00 !important;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #ff0000 !important;
+    color: #000 !important;
+}
+
+/* About Section */
+.about-section h2 {
+    text-shadow: 0px 0px 8px #00ff00;
+    font-size: 2.5rem;
+}
+
+.about-section p {
+    text-shadow: 0px 0px 4px #00ff00 !important;
+}
+
+/* Project Cards */
+.card {
+    background-color: #121212 !important;
+    border: 1px solid #00ff00 !important;
+}
+
+.card .card-title {
+    color: #00ff00 !important;
+    text-shadow: 0px 0px 5px #00ff00 !important;
+}
+
+.card .card-text {
+    color: #00ff00 !important;
+    text-shadow: 0px 0px 3px #00ff00 !important;
+}
+
+/* Footer */
+footer {
+    background-color: #121212 !important;
+    color: #00ff00 !important;
+    border-top: 1px solid #00ff00 !important;
+    text-shadow: 0px 0px 4px #00ff00 !important;
+}
+
+/* Glitch effect for text (optional) */
+@keyframes glitch {
+    0% {
+        text-shadow: 2px 2px red;
+    }
+    25% {
+        text-shadow: -2px -2px green;
+    }
+    50% {
+        text-shadow: 2px -2px blue;
+    }
+    75% {
+        text-shadow: -2px 2px yellow;
+    }
+    100% {
+        text-shadow: 0px 0px white;
+    }
+}
+
+.glitch {
+    animation: glitch 1.5s infinite;
+    text-shadow: 0px 0px 5px #00ff00;
+}
+
+/* Gallery-specific styles */
+
+/* Gallery container with dark theme */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 20px;
+}
+
+/* Gallery items with hover effects and neon glow */
+.gallery-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.4); /* Neon glow effect */
+}
+
+.gallery-item img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* Increase glow on hover */
+}
+
+/* Modal styles with dark overlay and glowing borders */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Darker background */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5); /* Glowing borders */
+}
+
+/* Target active modal to display */
+.modal:target {
+    display: flex;
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #00ff00;
+    border: none;
+    font-size: 2rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    color: #000;
+    transition: background-color 0.3s;
+}
+
+.close-btn:hover {
+    background-color: #ff0000; /* Red hover effect */
+}

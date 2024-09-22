@@ -1,20 +1,19 @@
+
 ## Folder Structure Overview
 my-portfolio/
+│   └── about.html
+│   └── contact.html
+│   └── gallery.html
+│   └── index.html
+│   └── navbar.html
+│   └── portfolio.html
 │   └── README.md
-│   ├── main/
+│   ├── assets/
 │   │   ├── css/
 │   │   │   └── styles.css
 │   │   ├── data/
 │   │   │   └── events.xml
 │   │   │   └── projects.json
-│   │   ├── html/
-│   │   │   └── about.html
-│   │   │   └── blog.html
-│   │   │   └── contact.html
-│   │   │   └── gallery.html
-│   │   │   └── index.html
-│   │   │   └── navbar.html
-│   │   │   └── portfolio.html
 │   │   ├── images/
 │   │   │   └── Dustdevil_Vid.MP4
 │   │   │   └── FamilySunset.JPEG
@@ -29,6 +28,7 @@ my-portfolio/
 │   │   │   └── Ls8_Map.png
 │   │   │   └── MtRosa_Gif.gif
 │   │   │   └── Muley_In_Velvet.JPEG
+│   │   │   └── noise-texture.png
 │   │   │   └── Richatt.JPEG
 │   │   │   └── Sietch.JPEG
 │   │   │   └── Sunset_Big.JPEG
