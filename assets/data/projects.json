@@ -1,3 +1,19 @@
 {
-	"projects": []
+    "projects": [
+        {
+            "title": "Potable Service Lead Inventory",
+            "description": "A GIS-based application inventory potable water services and there likelihhod of containing lead.",
+            "url": "https://experience.arcgis.com/experience/98cc0f0b77f147df89fae212a43c0726"
+        },
+        {
+            "title": "Conflict Monitoring",
+            "description": "An application to monitor global conflict and regional effects.",
+            "url": "https://example-app-2.com"
+        },
+        {
+            "title": "Denver Urban Heat Island",
+            "description": "A project visualizing the urban heat island effect in Denver and comparing it to yearly averaged vegetation.",
+            "url": "https://tyeingram.users.earthengine.app/view/uhidenverexplorer"
+        }
+    ]
 }
