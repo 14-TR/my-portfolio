@@ -5,164 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Gallery</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/gallery.css">
 </head>
 <body>
 
-<!-- Navbar placeholder for dynamic loading -->
+<!-- Navbar placeholder -->
 <div id="navbar-placeholder"></div>
 
-<div class="gallery-container">
-    <div class="gallery-item">
-        <a href="#img1">
-            <img src="assets/images/Dustdevil_Vid.MP4" alt="Dustdevil Video">
-        </a>
+<!-- Spacer for navbar height to avoid overlap -->
+<div style="height: 60px;"></div>
+
+<!-- Container for the introduction text above thumbnails -->
+<div class="gallery-header">
+    <h2>Explore Some of My Photos</h2>
+    <p>Click on a thumbnail to view the image in full screen.</p>
+</div>
+
+<!-- Thumbnail Image Grid -->
+<div class="thumbnail-grid">
+    <div class="thumbnail">
+        <img src="assets/images/FamilySunset.JPEG" alt="Family Sunset" onclick="openModal(this)">
     </div>
-    <div class="gallery-item">
-        <a href="#img2">
-            <img src="assets/images/FamilySunset.JPEG" alt="Family Sunset">
-        </a>
+    <div class="thumbnail">
+        <img src="assets/images/Fire_Headshot.JPEG" alt="Fire Headshot" onclick="openModal(this)">
     </div>
-    <div class="gallery-item">
-        <a href="#img3">
-            <img src="assets/images/Fire_Headshot.JPEG" alt="Fire Headshot">
-        </a>
+    <div class="thumbnail">
+        <img src="assets/images/GNP_mnt.JPEG" alt="GNP Mountain" onclick="openModal(this)">
     </div>
-    <div class="gallery-item">
-        <a href="#img4">
-            <img src="assets/images/GNP_mnt.JPEG" alt="GNP Mountain">
-        </a>
+    <div class="thumbnail">
+        <img src="assets/images/Great_Northern.JPEG" alt="Great Northern" onclick="openModal(this)">
     </div>
-    <div class="gallery-item">
-        <a href="#img5">
-            <img src="assets/images/Great_Northern.JPEG" alt="Great Northern">
-        </a>
+    <div class="thumbnail">
+        <img src="assets/images/Headshot.png" alt="Headshot" onclick="openModal(this)">
     </div>
-    <div class="gallery-item">
-        <a href="#img6">
-            <img src="assets/images/Headshot.png" alt="Headshot">
-        </a>
+    <div class="thumbnail">
+        <img src="assets/images/Jumping_Ram.png" alt="Jumping Ram" onclick="openModal(this)">
     </div>
-    <div class="gallery-item">
-        <a href="#img7">
-            <img src="assets/images/Jumping_Ram.png" alt="Jumping Ram">
-        </a>
+    <div class="thumbnail">
+        <img src="assets/images/Khal_Art.JPEG" alt="Khal Art" onclick="openModal(this)">
     </div>
-    <div class="gallery-item">
-        <a href="#img8">
-            <img src="assets/images/Khal_Art.JPEG" alt="Khal Art">
-        </a>
+    <div class="thumbnail">
+        <img src="assets/images/Landscape_Burn.JPEG" alt="Landscape Burn" onclick="openModal(this)">
     </div>
-    <div class="gallery-item">
-        <a href="#img9">
-            <img src="assets/images/Landscape_Burn.JPEG" alt="Landscape Burn">
-        </a>
+    <div class="thumbnail">
+        <img src="assets/images/LFA.JPEG" alt="LFA" onclick="openModal(this)">
     </div>
-    <div class="gallery-item">
-        <a href="#img10">
-            <img src="assets/images/LFA.JPEG" alt="LFA">
-        </a>
+    <div class="thumbnail">
+        <img src="assets/images/Ls8_Map.png" alt="LS8 Map" onclick="openModal(this)">
     </div>
-    <div class="gallery-item">
-        <a href="#img11">
-            <img src="assets/images/Ls8_Map.png" alt="LS8 Map">
-        </a>
+    <div class="thumbnail">
+        <img src="assets/images/MtRosa_Gif.gif" alt="Mt Rosa GIF" onclick="openModal(this)">
     </div>
-    <div class="gallery-item">
-        <a href="#img12">
-            <img src="assets/images/MtRosa_Gif.gif" alt="Mt Rosa GIF">
-        </a>
+    <div class="thumbnail">
+        <img src="assets/images/Muley_In_Velvet.JPEG" alt="Muley in Velvet" onclick="openModal(this)">
     </div>
-    <div class="gallery-item">
-        <a href="#img13">
-            <img src="assets/images/Muley_In_Velvet.JPEG" alt="Muley in Velvet">
-        </a>
+    <div class="thumbnail">
+        <img src="assets/images/Richatt.JPEG" alt="Richatt Structure" onclick="openModal(this)">
     </div>
-    <div class="gallery-item">
-        <a href="#img14">
-            <img src="assets/images/Richatt.JPEG" alt="Richatt Structure">
-        </a>
-    </div>
-    <div class="gallery-item">
-        <a href="#img15">
-            <img src="assets/images/Sietch.JPEG" alt="Sietch">
-        </a>
-    </div>
-    <div class="gallery-item">
-        <a href="#img16">
-            <img src="assets/images/Sunset_Big.JPEG" alt="Sunset Big">
-        </a>
+    <div class="thumbnail">
+        <img src="assets/images/Sietch.JPEG" alt="Sietch" onclick="openModal(this)">
     </div>
 </div>
 
-<!-- Modals -->
-<div id="img1" class="modal">
-    <img src="assets/images/Dustdevil_Vid.MP4" alt="Dustdevil Video">
-    <a href="#" class="close-btn">&times;</a>
+<!-- Modal for full-size image view -->
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="expandedImg">
+    <div id="imgtext" class="caption"></div>
 </div>
-<div id="img2" class="modal">
-    <img src="assets/images/FamilySunset.JPEG" alt="Family Sunset">
-    <a href="#" class="close-btn">&times;</a>
-</div>
-<div id="img3" class="modal">
-    <img src="assets/images/Fire_Headshot.JPEG" alt="Fire Headshot">
-    <a href="#" class="close-btn">&times;</a>
-</div>
-<div id="img4" class="modal">
-    <img src="assets/images/GNP_mnt.JPEG" alt="GNP Mountain">
-    <a href="#" class="close-btn">&times;</a>
-</div>
-<div id="img5" class="modal">
-    <img src="assets/images/Great_Northern.JPEG" alt="Great Northern">
-    <a href="#" class="close-btn">&times;</a>
-</div>
-<div id="img6" class="modal">
-    <img src="assets/images/Headshot.png" alt="Headshot">
-    <a href="#" class="close-btn">&times;</a>
-</div>
-<div id="img7" class="modal">
-    <img src="assets/images/Jumping_Ram.png" alt="Jumping Ram">
-    <a href="#" class="close-btn">&times;</a>
-</div>
-<div id="img8" class="modal">
-    <img src="assets/images/Khal_Art.JPEG" alt="Khal Art">
-    <a href="#" class="close-btn">&times;</a>
-</div>
-<div id="img9" class="modal">
-    <img src="assets/images/Landscape_Burn.JPEG" alt="Landscape Burn">
-    <a href="#" class="close-btn">&times;</a>
-</div>
-<div id="img10" class="modal">
-    <img src="assets/images/LFA.JPEG" alt="LFA">
-    <a href="#" class="close-btn">&times;</a>
-</div>
-<div id="img11" class="modal">
-    <img src="assets/images/Ls8_Map.png" alt="LS8 Map">
-    <a href="#" class="close-btn">&times;</a>
-</div>
-<div id="img12" class="modal">
-    <img src="assets/images/MtRosa_Gif.gif" alt="Mt Rosa GIF">
-    <a href="#" class="close-btn">&times;</a>
-</div>
-<div id="img13" class="modal">
-    <img src="assets/images/Muley_In_Velvet.JPEG" alt="Muley in Velvet">
-    <a href="#" class="close-btn">&times;</a>
-</div>
-<div id="img14" class="modal">
-    <img src="assets/images/Richatt.JPEG" alt="Richatt Structure">
-    <a href="#" class="close-btn">&times;</a>
-</div>
-<div id="img15" class="modal">
-    <img src="assets/images/Sietch.JPEG" alt="Sietch">
-    <a href="#" class="close-btn">&times;</a>
-</div>
-<div id="img16" class="modal">
-    <img src="assets/images/Sunset_Big.JPEG" alt="Sunset Big">
-    <a href="#" class="close-btn">&times;</a>
-</div>
-
-</body>
 
 <script src="assets/js/navbar.js"></script>
+<script src="assets/js/gallery.js"></script>
 
+</body>
 </html>

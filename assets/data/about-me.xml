@@ -1,11 +1,11 @@
 <about-me>
     <year id="2013">
         <coordinates lat="39.7392" lng="-104.9903"></coordinates>
-        <description>In 2013, I completed my undergraduate degree in GIS.</description>
+        <description>In 2013, I joined the USAF.</description>
     </year>
-    <year id="2014">
+    <year id="2019">
         <coordinates lat="40.748817" lng="-73.985428"></coordinates>
-        <description>In 2014, I worked on a significant project related to urban planning in NYC.</description>
+        <description>In 2019, I became a Flathead National Forest Hotshot.</description>
     </year>
     <!-- Add more years as needed -->
 </about-me>
