@@ -1,57 +1,140 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const yearSelect = document.getElementById('year-select');
-    const yearDetails = document.getElementById('year-details');
-
-    // Initialize the map using Leaflet.js
-    const map = L.map('map').setView([39.7392, -104.9903], 5); // Default view
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
-    // Make sure the map container is always correctly sized
-    setTimeout(function () {
-        map.invalidateSize();
-    }, 500);
-
-    // Fetch year data from XML
-    fetch('assets/data/about-me.xml')
-        .then(response => response.text())
-        .then(xmlString => {
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlString, 'text/xml');
-            const years = xmlDoc.getElementsByTagName('year');
-
-            // Populate the year dropdown
-            Array.from(years).forEach(year => {
-                const option = document.createElement('option');
-                const yearId = year.getAttribute('id');
-                option.value = yearId;
-                option.textContent = yearId;
-                yearSelect.appendChild(option);
-            });
-
-            // Handle year selection change
-            yearSelect.addEventListener('change', function() {
-                const selectedYear = this.value;
-                if (selectedYear) {
-                    const yearData = Array.from(years).find(year => year.getAttribute('id') === selectedYear);
-                    const lat = parseFloat(yearData.querySelector('coordinates').getAttribute('lat'));
-                    const lng = parseFloat(yearData.querySelector('coordinates').getAttribute('lng'));
-                    const description = yearData.querySelector('description').textContent;
-
-                    // Fly to the selected year's location without resetting the map
-                    map.flyTo([lat, lng], 10); // Zoom to the year-specific location
-                    yearDetails.innerHTML = `<p>${description}</p>`;
-
-                    // Invalidate map size to ensure it's displayed properly
-                    setTimeout(function () {
-                        map.invalidateSize();  // Ensure the map retains size after change
-                    }, 300);  // A slight delay helps to make sure the layout settles before resizing
-                } else {
-                    yearDetails.innerHTML = ''; // Clear details if no valid year selected
-                }
-            });
-        })
-        .catch(error => console.error('Error loading year data:', error));
-});
+require([
+    "esri/Map",
+    "esri/views/SceneView",
+    "esri/layers/TileLayer",
+    "esri/Basemap",
+    "esri/layers/FeatureLayer",
+    "esri/widgets/LayerList",
+    "esri/request",
+    "esri/Graphic",
+    "dojo/domReady!" 
+  ], function (Map, SceneView, TileLayer, Basemap, FeatureLayer, LayerList, request, Graphic) {
+  
+    const satelliteLayer = new TileLayer({
+      url: "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+      title: "satellite"
+    });
+  
+    const fireflyLayer = new TileLayer({
+      url: "https://tiles.arcgis.com/tiles/nGt4QxSblgDfeJn9/arcgis/rest/services/HalfEarthFirefly/MapServer",
+      title: "half-earth-firefly"
+    });
+  
+    const basemap = new Basemap({
+      baseLayers: [satelliteLayer, fireflyLayer],
+      title: "half-earth-basemap",
+      id: "half-earth-basemap"
+    });
+  
+    const myPlaces = new FeatureLayer({
+      url: 'https://services3.arcgis.com/HVjI8GKrRtjcQ4Ry/arcgis/rest/services/My_Places/FeatureServer',
+      outFields: ["*"], // This ensures all fields are available for the popup
+      popupTemplate: {
+        title: "My Places: {place_name}", // Customize based on the field in your service
+        content: [{
+          type: "fields",
+          fieldInfos: [
+            {
+              fieldName: "duration",
+              label: "Time Spent (Days)"
+            },
+            {
+              fieldName: "note",
+              label: "Comments"
+            },
+            {
+              fieldName: "reason",
+              label: "Reason"
+            },
+            {
+              fieldName: "date_year",
+              label: "Date"
+            }
+          ]
+        }]
+      }
+    });
+  
+    const map = new Map({
+      basemap: basemap,
+      layers: [myPlaces]
+    });
+  
+    const view = new SceneView({
+      map: map,
+      container: "sceneContainer",
+      environment: {
+        atmosphereEnabled: false,
+        background: {
+          type: "color",
+          color: [0, 10, 16]
+        }
+      },
+      ui: {
+        components: ["zoom"]
+      }
+    });
+  
+    const layerList = new LayerList({
+      view: view
+    });
+  
+    view.ui.add(layerList, {
+      position: "top-right"
+    });
+  
+    const uploadForm = document.getElementById("uploadForm");
+  
+    uploadForm.addEventListener("change", function (event) {
+      const filePath = event.target.value.toLowerCase(); //.zip Only
+      if (filePath.indexOf(".zip") !== -1) {
+        generateFeatureCollection(uploadForm);
+      }
+    });
+  
+    function generateFeatureCollection(uploadFormNode) {
+      const generateRequestParams = {
+        filetype: "shapefile",
+        publishParameters: JSON.stringify({
+          targetSR: view.spatialReference
+        }),
+        f: "json"
+      };
+      request("https://www.arcgis.com/sharing/rest/content/features/generate", {
+        query: generateRequestParams,
+        body: uploadFormNode,
+        responseType: "json"
+      }).then(function (response) {
+        addShapefileToMap(response.data.featureCollection);
+        console.log(response);
+      });
+    }
+  
+    function createFeaturesGraphics(layer) {
+      return layer.featureSet.features.map(function (feature) {
+        return Graphic.fromJSON(feature);
+      });
+    }
+  
+    function createFeatureLayerFromGraphic(graphics) {
+      return new FeatureLayer({
+        objectIdField: "FID",
+        source: graphics,
+        title: "User uploaded shapefile"
+      });
+    }
+  
+    function addShapefileToMap(featureCollection) {
+      let sourceGraphics = [];
+      const collectionLayers = featureCollection.layers;
+      const mapLayers = collectionLayers.map(function (layer) {
+        const graphics = createFeaturesGraphics(layer);
+        sourceGraphics = sourceGraphics.concat(graphics);
+        const featureLayer = createFeatureLayerFromGraphic(graphics);
+        return featureLayer;
+      });
+      map.addMany(mapLayers);
+      view.goTo({ target: sourceGraphics, tilt: 40 });
+    }
+  });
+  

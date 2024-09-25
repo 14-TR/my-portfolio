@@ -24,29 +24,6 @@ body::before {
     z-index: 9999;
 }
 
-/* Navbar */
-.navbar {
-    background-color: #121212 !important;
-    border-bottom: 1px solid #00ff00 !important;
-}
-
-.navbar a {
-    color: #00ff00 !important;
-    transition: color 0.3s ease;
-}
-
-.navbar a:hover {
-    color: #ff0000 !important; /* Red hover effect */
-}
-
-.navbar-toggler {
-    border-color: #00ff00 !important;
-}
-
-.navbar-toggler-icon {
-    background-color: #00ff00 !important; /* Neon green for toggler */
-}
-
 /* Hero Section */
 .hero {
     background: url('assets/images/Sietch.JPEG') no-repeat center center/cover !important;

@@ -1,0 +1,49 @@
+.footer {
+  background-color: #121212;
+  color: #00ff00; /* Neon green text */
+  box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.5); /* Glowing effect */
+  width: 100%; /* Ensure full width */
+  padding: 20px 0;
+  position: relative; /* Make it behave properly in the layout */
+  bottom: 0; /* Stick it to the bottom */
+}
+
+.footer h5 {
+  color: #00ff00;
+  text-shadow: 0px 0px 5px #00ff00;
+}
+
+footer .p,
+.footer a {
+  color: #00ff00;
+  text-shadow: 0px 0px 3px #00ff00;
+}
+
+.footer a:hover {
+  color: #ff0000; /* Red hover effect */
+}
+
+.footer .list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.footer .container {
+  padding: 10px;
+}
+
+.footer .text-center {
+  border-top: 1px solid #00ff00;
+  margin-top: 10px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px; /* Match it with container size */
+  margin: 0 auto; /* Center content horizontally */
+}
+
+.footer p {
+  margin: 0;
+}

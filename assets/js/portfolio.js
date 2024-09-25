@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('assets/data/projects.json')
         .then(response => response.json())
         .then(data => {
-            const projectContainer = document.querySelector('.portfolio-section .row');
+            const projectContainer = document.querySelector('.portfolio-section .column');
             data.projects.forEach(project => {
                 const projectCard = `
                     <div class="col-md-6 mb-4">

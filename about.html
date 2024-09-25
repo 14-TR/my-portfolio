@@ -3,34 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Map Year Selector</title>
+    <title>About Me</title>
+    <link rel="stylesheet" href="assets/css/about.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.23/esri/themes/light/main.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.23/esri/themes/dark-blue/main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://js.arcgis.com/4.23/"></script>
 </head>
 <body>
 
+    <!-- Navbar placeholder -->
     <div id="navbar-placeholder"></div>
 
     <!-- Spacer for navbar height to avoid overlap -->
     <div style="height: 60px;"></div>
 
     <section class="py-5">
-        <div class="container">
-            <h1>About My Professional Journey</h1>
-            <label for="year-select">Select a year to learn more:</label>
-            <select id="year-select">
-                <option value="">-- Select a Year --</option>
-            </select>
-            <div id="year-details">
-                <!-- Map container -->
-                <div id="map"></div>
-            </div>
-        </div>
+        <h1 class="text-center mb-5">Explore the globe to learn about me!</h1>
+            <div id="sceneContainer"></div>
     </section>
+    
+    <div id="footer-placeholder"></div>
 
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="assets/js/footer.js"></script>
     <script src="assets/js/navbar.js"></script>
-    <script src="assets/js/about.js"></script> <!-- JS for year and map interaction -->
+    <script src="assets/js/about.js"></script>
 </body>
 </html>

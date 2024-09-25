@@ -1,0 +1,112 @@
+/* General body settings to match the espionage theme */
+body {
+    background: radial-gradient(circle, #0f0f0f, #050505); /* Dark gradient background */
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font for typewriter aesthetic */
+    color: #00ff00 !important; /* Neon green text */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Navbar styling */
+#navbar-placeholder {
+    background-color: #121212; /* Dark background for navbar */
+    border-bottom: 2px solid #00ff00; /* Neon green border */
+}
+
+.navbar a {
+    color: #00ff00 !important; /* Neon green for links */
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ff0000 !important; /* Red hover effect */
+}
+
+/* Spacer for navbar height */
+section {
+    padding-top: 60px; /* Account for fixed navbar */
+}
+
+/* Container for text and globe */
+.container {
+    max-width: 90%;
+    margin: 0 auto; /* Centered horizontally */
+    text-align: center;
+    padding: 20px;
+}
+
+/* Title section for the map */
+.map-title {
+    font-size: 2.5rem;
+    color: #00ff00; /* Neon green */
+    text-shadow: 0px 0px 10px #00ff00; /* Glowing effect for the header */
+    margin-bottom: 20px;
+}
+
+/* Style for the year-details section */
+#year-details {
+    background-color: #0f0f0f;
+    border: 2px solid #00ff00; /* Neon green border */
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.5); /* Glowing effect */
+    margin-bottom: 20px;
+}
+
+/* Map container to fit the espionage theme */
+#sceneContainer {
+    height: 90vh; /* 90% height of the viewport */
+    width: 90vw;  /* 90% width of the viewport */
+    margin: 5vh auto; /* Centered with 5% margin on top and bottom */
+    border: 2px solid #00ff00; /* Neon green border */
+    box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.5); /* Glowing effect */
+    position: relative;
+    overflow: hidden; /* Ensure the map UI elements are contained */
+}
+
+/* Upload form */
+#uploadForm {
+    background: rgba(36, 36, 36, 0.9);
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    padding: 8px;
+    position: absolute;
+    top: 20px;
+    left: 60px;
+    z-index: 100;
+}
+
+/* Adjusting the position of the zoom buttons inside the globe */
+.esri-ui-button {
+    background-color: #0f0f0f !important;
+    border: 1px solid #00ff00 !important;
+    color: #00ff00 !important;
+    z-index: 101; /* Ensure buttons stay on top of the map */
+    position: relative;
+}
+
+.esri-ui-button:hover {
+    background-color: #00ff00 !important;
+    color: #000 !important;
+    border-color: #ff0000 !important; /* Red hover effect */
+}
+
+/* Layer list to match dark theme */
+.esri-layer-list {
+    background-color: rgba(15, 15, 15, 0.8) !important;
+    border: 1px solid #00ff00 !important;
+    position: relative; /* Ensure it stays within the map container */
+    z-index: 101;
+    max-width: 250px;
+}
+
+.esri-layer-list__item {
+    color: #00ff00 !important;
+}
+
+.esri-layer-list__item:hover {
+    background-color: rgba(0, 255, 0, 0.1) !important;
+}
+
+/* Popups for features in the map */
+.esri-popup .esri-popup__header, .esri-popup .esri-popup__
