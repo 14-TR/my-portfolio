@@ -3,16 +3,19 @@
         {
             "title": "Potable Service Lead Inventory",
             "description": "A GIS-based application inventory potable water services and there likelihhod of containing lead.",
+            "image": "assets/images/lead_inventory.png",
             "url": "https://experience.arcgis.com/experience/98cc0f0b77f147df89fae212a43c0726"
         },
         {
             "title": "Conflict Monitoring",
             "description": "An application to monitor global conflict and regional effects.",
+            "image": "assets/images/conflict_tracker.png",
             "url": "https://experience.arcgis.com/experience/a4160b9ffba94a94a166486d7709e059/"
         },
         {
             "title": "Denver Urban Heat Island",
             "description": "A project visualizing the urban heat island effect in Denver and comparing it to yearly averaged vegetation.",
+            "image": "assets/images/urban_heat_island.png",
             "url": "https://tyeingram.users.earthengine.app/view/uhidenverexplorer"
         }
     ]

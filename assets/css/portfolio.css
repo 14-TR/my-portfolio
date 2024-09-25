@@ -1,43 +1,52 @@
 body {
-    background: radial-gradient(circle, #0f0f0f, #050505); /* Espionage theme background */
-    font-family: 'Courier New', Courier, monospace; /* Monospaced font for typewriter aesthetic */
-    color: #00ff00 !important; /* Neon green text */
-    margin: 0;
+    background: radial-gradient(circle, #0f0f0f, #050505); 
+    font-family: 'Courier New', Courier, monospace; 
+    color: #00ff00 !important; 
     padding: 0;
     display: flex;
-    flex-direction: column; /* Align items vertically */
-    min-height: 100vh; /* Ensure body takes full height */
+    flex-direction: column; 
+    min-height: 100vh; 
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80vw;
-    max-width: 1200px;
+    width: 100vw;
+    max-width: 1200px; 
     margin: 0 auto;
-    padding-bottom: 20px; /* Space for footer */
-    flex-grow: 1; /* Allow container to take up remaining space */
+    padding-bottom: 20px; 
 }
 
 .portfolio-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid layout */
-    gap: 20px; /* Space between cards */
+    width: 100%;
+    padding: 20px 0;
+}
+
+#projects-container {
+    display: flex;
     justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
     width: 100%;
 }
 
 .card {
     background-color: #121212 !important;
     border: 1px solid #00ff00 !important;
-    box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.5); /* Glowing effect */
+    box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.5); 
     padding: 20px;
+    width: 300px;
+    margin: 0;
 }
 
 .card-title {
     color: #00ff00 !important;
+}
+
+.card-img-top {
+    max-height: 200px;
+    object-fit: cover; 
+    border-bottom: 1px solid #00ff00;
+    box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.5); 
+    margin-bottom: 15px; 
 }
 
 .btn-primary {

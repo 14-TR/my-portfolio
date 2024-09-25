@@ -11,7 +11,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Navbar theme */
+
 .navbar {
     background-color: #121212 !important;
     border-bottom: 1px solid #00ff00 !important;
@@ -26,14 +26,14 @@ body {
     color: #ff0000 !important;
 }
 
-/* Gallery header */
+
 .gallery-header {
     text-align: center;
     color: #00ff00;
     margin-top: 20px;
 }
 
-/* Thumbnail Image Grid */
+
 .thumbnail-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -54,7 +54,7 @@ body {
     box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.5);
 }
 
-/* Modal Style */
+
 .modal {
     display: none;
     position: fixed;

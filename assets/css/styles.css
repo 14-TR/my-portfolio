@@ -32,6 +32,13 @@ body::before {
     text-shadow: 0 0 8px #00ff00 !important;
 }
 
+.centered-image {
+    max-width: 200px; 
+    height: auto;
+    display: inline-block;
+    margin: 20px auto; 
+}
+
 
 .btn-primary {
     background-color: transparent !important;

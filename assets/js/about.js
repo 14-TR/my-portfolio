@@ -11,12 +11,12 @@ require([
   ], function (Map, SceneView, TileLayer, Basemap, FeatureLayer, LayerList, request, Graphic) {
   
     const satelliteLayer = new TileLayer({
-      url: "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+      url: "https:
       title: "satellite"
     });
   
     const fireflyLayer = new TileLayer({
-      url: "https://tiles.arcgis.com/tiles/nGt4QxSblgDfeJn9/arcgis/rest/services/HalfEarthFirefly/MapServer",
+      url: "https:
       title: "half-earth-firefly"
     });
   
@@ -27,10 +27,10 @@ require([
     });
   
     const myPlaces = new FeatureLayer({
-      url: 'https://services3.arcgis.com/HVjI8GKrRtjcQ4Ry/arcgis/rest/services/My_Places/FeatureServer',
-      outFields: ["*"], // This ensures all fields are available for the popup
+      url: 'https:
+      outFields: ["*"], 
       popupTemplate: {
-        title: "My Places: {place_name}", // Customize based on the field in your service
+        title: "My Places: {place_name}", 
         content: [{
           type: "fields",
           fieldInfos: [
@@ -86,7 +86,7 @@ require([
     const uploadForm = document.getElementById("uploadForm");
   
     uploadForm.addEventListener("change", function (event) {
-      const filePath = event.target.value.toLowerCase(); //.zip Only
+      const filePath = event.target.value.toLowerCase(); 
       if (filePath.indexOf(".zip") !== -1) {
         generateFeatureCollection(uploadForm);
       }
@@ -100,7 +100,7 @@ require([
         }),
         f: "json"
       };
-      request("https://www.arcgis.com/sharing/rest/content/features/generate", {
+      request("https:
         query: generateRequestParams,
         body: uploadFormNode,
         responseType: "json"

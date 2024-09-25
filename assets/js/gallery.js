@@ -7,7 +7,7 @@ function loadImagesFromXML() {
           const images = xml.getElementsByTagName("image");
           const thumbnailGrid = document.querySelector(".thumbnail-grid");
 
-          // loop xml
+          
           for (let i = 0; i < images.length; i++) {
               const src = images[i].getElementsByTagName("src")[0].textContent;
               const alt = images[i].getElementsByTagName("alt")[0].textContent;
@@ -45,7 +45,7 @@ function closeModal() {
   modal.style.display = "none";  
 }
 
-// load when ready
+
 window.onload = function() {
   loadImagesFromXML();
 };

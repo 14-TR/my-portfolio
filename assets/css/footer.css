@@ -1,11 +1,11 @@
 .footer {
   background-color: #121212;
-  color: #00ff00; /* Neon green text */
-  box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.5); /* Glowing effect */
-  width: 100%; /* Ensure full width */
+  color: #00ff00; 
+  box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.5); 
+  width: 100% !important; 
   padding: 20px 0;
-  position: relative; /* Make it behave properly in the layout */
-  bottom: 0; /* Stick it to the bottom */
+  position: relative; 
+  bottom: 0; 
 }
 
 .footer h5 {
@@ -13,14 +13,13 @@
   text-shadow: 0px 0px 5px #00ff00;
 }
 
-footer .p,
 .footer a {
   color: #00ff00;
   text-shadow: 0px 0px 3px #00ff00;
 }
 
 .footer a:hover {
-  color: #ff0000; /* Red hover effect */
+  color: #ff0000; 
 }
 
 .footer .list-unstyled {
@@ -40,8 +39,8 @@ footer .p,
 }
 
 .footer-content {
-  max-width: 1200px; /* Match it with container size */
-  margin: 0 auto; /* Center content horizontally */
+  max-width: 1200px !important; 
+  margin: 0 auto; 
 }
 
 .footer p {

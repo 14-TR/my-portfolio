@@ -1,14 +1,14 @@
-// Speed up orbit on hover
+
 document.querySelectorAll('.orbiting-photo').forEach(function(photo) {
     photo.addEventListener('mouseover', function() {
-        this.style.animationDuration = '5s'; // Speed up on hover
+        this.style.animationDuration = '5s'; 
     });
     photo.addEventListener('mouseout', function() {
-        this.style.animationDuration = '10s'; // Return to normal speed
+        this.style.animationDuration = '10s'; 
     });
 });
 
-// Smooth scrolling
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
