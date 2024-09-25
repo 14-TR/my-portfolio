@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<images>
+    <image>
+        <src>assets/images/FamilySunset.JPEG</src>
+        <alt>Family Sunset</alt>
+    </image>
+    <image>
+        <src>assets/images/Fire_Headshot.JPEG</src>
+        <alt>Fire Headshot</alt>
+    </image>
+    <image>
+        <src>assets/images/GNP_mnt.JPEG</src>
+        <alt>GNP Mountain</alt>
+    </image>
+    <image>
+        <src>assets/images/Great_Northern.JPEG</src>
+        <alt>Great Northern</alt>
+    </image>
+    <image>
+        <src>assets/images/Headshot.png</src>
+        <alt>Headshot</alt>
+    </image>
+    <image>
+        <src>assets/images/Jumping_Ram.png</src>
+        <alt>Jumping Ram</alt>
+    </image>
+    <image>
+        <src>assets/images/Khal_Art.JPEG</src>
+        <alt>Khal Art</alt>
+    </image>
+    <image>
+        <src>assets/images/Landscape_Burn.JPEG</src>
+        <alt>Landscape Burn</alt>
+    </image>
+    <image>
+        <src>assets/images/LFA.JPEG</src>
+        <alt>LFA</alt>
+    </image>
+    <image>
+        <src>assets/images/Ls8_Map.png</src>
+        <alt>LS8 Map</alt>
+    </image>
+    <image>
+        <src>assets/images/MtRosa_Gif.gif</src>
+        <alt>Mt Rosa GIF</alt>
+    </image>
+    <image>
+        <src>assets/images/Muley_In_Velvet.JPEG</src>
+        <alt>Muley in Velvet</alt>
+    </image>
+    <image>
+        <src>assets/images/Richatt.JPEG</src>
+        <alt>Richatt Structure</alt>
+    </image>
+    <image>
+        <src>assets/images/Sietch.JPEG</src>
+        <alt>Sietch</alt>
+    </image>
+</images>

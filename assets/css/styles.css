@@ -1,16 +1,12 @@
-/* Existing espionage theme styles */
-
-/* Ensure custom styles take precedence over Bootstrap */
 body {
-    background: radial-gradient(circle, #0f0f0f, #050505); /* Dark gradient background */
-    font-family: 'Courier New', Courier, monospace; /* Monospaced font for typewriter aesthetic */
-    color: #00ff00 !important; /* Neon green text */
+    background: radial-gradient(circle, #0f0f0f, #050505);
+    font-family: 'Courier New', Courier, monospace; 
+    color: #00ff00 !important; 
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden; 
 }
 
-/* Static noise overlay */
 body::before {
     content: "";
     position: fixed;
@@ -19,12 +15,12 @@ body::before {
     width: 100%;
     height: 100%;
     background: url('assets/images/noise-texture.png') repeat;
-    opacity: 0.05; /* Subtle static effect */
+    opacity: 0.05; 
     pointer-events: none;
     z-index: 9999;
 }
 
-/* Hero Section */
+
 .hero {
     background: url('assets/images/Sietch.JPEG') no-repeat center center/cover !important;
     padding: 100px 0;
@@ -36,7 +32,7 @@ body::before {
     text-shadow: 0 0 8px #00ff00 !important;
 }
 
-/* Button Styles */
+
 .btn-primary {
     background-color: transparent !important;
     border: 2px solid #00ff00 !important;
@@ -61,7 +57,7 @@ body::before {
     color: #000 !important;
 }
 
-/* About Section */
+
 .about-section h2 {
     text-shadow: 0px 0px 8px #00ff00;
     font-size: 2.5rem;
@@ -71,7 +67,7 @@ body::before {
     text-shadow: 0px 0px 4px #00ff00 !important;
 }
 
-/* Project Cards */
+
 .card {
     background-color: #121212 !important;
     border: 1px solid #00ff00 !important;
@@ -87,7 +83,7 @@ body::before {
     text-shadow: 0px 0px 3px #00ff00 !important;
 }
 
-/* Footer */
+
 footer {
     background-color: #121212 !important;
     color: #00ff00 !important;
@@ -95,7 +91,6 @@ footer {
     text-shadow: 0px 0px 4px #00ff00 !important;
 }
 
-/* Glitch effect for text */
 @keyframes glitch {
     0% {
         text-shadow: 2px 2px red;
@@ -119,9 +114,7 @@ footer {
     text-shadow: 0px 0px 5px #00ff00;
 }
 
-/* Gallery-specific styles */
 
-/* Gallery container with dark theme */
 .gallery-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -129,7 +122,6 @@ footer {
     padding: 20px;
 }
 
-/* Gallery items with hover effects and neon glow */
 .gallery-item {
     position: relative;
     cursor: pointer;
@@ -140,15 +132,14 @@ footer {
     height: auto;
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.4); /* Neon glow effect */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.4); 
 }
 
 .gallery-item img:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* Increase glow on hover */
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); 
 }
 
-/* Modal styles with dark overlay and glowing borders */
 .modal {
     display: none;
     position: fixed;
@@ -157,7 +148,7 @@ footer {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Darker background */
+    background-color: rgba(0, 0, 0, 0.9); 
     justify-content: center;
     align-items: center;
 }
@@ -166,15 +157,15 @@ footer {
     max-width: 90%;
     max-height: 90%;
     border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5); /* Glowing borders */
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5); 
 }
 
-/* Target active modal to display */
+
 .modal:target {
     display: flex;
 }
 
-/* Close button */
+
 .close-btn {
     position: absolute;
     top: 20px;
@@ -190,76 +181,10 @@ footer {
 }
 
 .close-btn:hover {
-    background-color: #ff0000; /* Red hover effect */
+    background-color: #ff0000; 
 }
 
 #map {
     height: 500px;
     margin-top: 20px;
 }
-
-/* 3D Carousel Styles */
-.carousel-container {
-    perspective: 1000px;
-    margin: 50px auto;
-    width: 80%;
-    height: 300px;
-    overflow: hidden;
-}
-
-.carousel {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    animation: rotate 20s infinite linear;
-}
-
-.carousel-item {
-    position: absolute;
-    width: 200px;
-    height: 300px;
-    left: 50%;
-    top: 50%;
-    transform-origin: center;
-    transform-style: preserve-3d;
-    transition: transform 1s;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-/* Rotating effect */
-@keyframes rotate {
-    from {
-        transform: rotateY(0deg);
-    }
-    to {
-        transform: rotateY(360deg);
-    }
-}
-
-/* Set the spacing for items */
-.carousel-item:nth-child(1) { transform: rotateY(0deg) translateZ(400px); }
-.carousel-item:nth-child(2) { transform: rotateY(22.5deg) translateZ(400px); }
-.carousel-item:nth-child(3) { transform: rotateY(45deg) translateZ(400px); }
-.carousel-item:nth-child(4) { transform: rotateY(67.5deg) translateZ(400px); }
-.carousel-item:nth-child(5) { transform: rotateY(90deg) translateZ(400px); }
-.carousel-item:nth-child(6) { transform: rotateY(112.5deg) translateZ(400px); }
-.carousel-item:nth-child(7) { transform: rotateY(135deg) translateZ(400px); }
-.carousel-item:nth-child(8) { transform: rotateY(157.5deg) translateZ(400px); }
-.carousel-item:nth-child(9) { transform: rotateY(180deg) translateZ(400px); }
-.carousel-item:nth-child(10) { transform: rotateY(202.5deg) translateZ(400px); }
-.carousel-item:nth-child(11) { transform: rotateY(225deg) translateZ(400px); }
-.carousel-item:nth-child(12) { transform: rotateY(247.5deg) translateZ(400px); }
-.carousel-item:nth-child(13) { transform: rotateY(270deg) translateZ(400px); }
-.carousel-item:nth-child(14) { transform: rotateY(292.5deg) translateZ(400px); }
-.carousel-item:nth-child(15) { transform: rotateY(315deg) translateZ(400px); }
-.carousel-item:nth-child(16) { transform: rotateY(337.5deg) translateZ(400px); }

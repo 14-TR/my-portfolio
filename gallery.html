@@ -11,65 +11,22 @@
 </head>
 <body>
 
-<!-- Navbar placeholder -->
+
 <div id="navbar-placeholder"></div>
 
-<!-- Spacer for navbar height to avoid overlap -->
 <div style="height: 60px;"></div>
 
-<!-- Container for the introduction text above thumbnails -->
+
 <div class="gallery-header">
     <h2>Explore Some of My Photos</h2>
     <p>Click on a thumbnail to view the image in full screen.</p>
 </div>
 
-<!-- Thumbnail Image Grid -->
 <div class="thumbnail-grid">
-    <div class="thumbnail">
-        <img src="assets/images/FamilySunset.JPEG" alt="Family Sunset" onclick="openModal(this)">
-    </div>
-    <div class="thumbnail">
-        <img src="assets/images/Fire_Headshot.JPEG" alt="Fire Headshot" onclick="openModal(this)">
-    </div>
-    <div class="thumbnail">
-        <img src="assets/images/GNP_mnt.JPEG" alt="GNP Mountain" onclick="openModal(this)">
-    </div>
-    <div class="thumbnail">
-        <img src="assets/images/Great_Northern.JPEG" alt="Great Northern" onclick="openModal(this)">
-    </div>
-    <div class="thumbnail">
-        <img src="assets/images/Headshot.png" alt="Headshot" onclick="openModal(this)">
-    </div>
-    <div class="thumbnail">
-        <img src="assets/images/Jumping_Ram.png" alt="Jumping Ram" onclick="openModal(this)">
-    </div>
-    <div class="thumbnail">
-        <img src="assets/images/Khal_Art.JPEG" alt="Khal Art" onclick="openModal(this)">
-    </div>
-    <div class="thumbnail">
-        <img src="assets/images/Landscape_Burn.JPEG" alt="Landscape Burn" onclick="openModal(this)">
-    </div>
-    <div class="thumbnail">
-        <img src="assets/images/LFA.JPEG" alt="LFA" onclick="openModal(this)">
-    </div>
-    <div class="thumbnail">
-        <img src="assets/images/Ls8_Map.png" alt="LS8 Map" onclick="openModal(this)">
-    </div>
-    <div class="thumbnail">
-        <img src="assets/images/MtRosa_Gif.gif" alt="Mt Rosa GIF" onclick="openModal(this)">
-    </div>
-    <div class="thumbnail">
-        <img src="assets/images/Muley_In_Velvet.JPEG" alt="Muley in Velvet" onclick="openModal(this)">
-    </div>
-    <div class="thumbnail">
-        <img src="assets/images/Richatt.JPEG" alt="Richatt Structure" onclick="openModal(this)">
-    </div>
-    <div class="thumbnail">
-        <img src="assets/images/Sietch.JPEG" alt="Sietch" onclick="openModal(this)">
-    </div>
+    <!-- images loading from xml -->
 </div>
 
-<!-- Modal for full-size image view -->
+
 <div id="imageModal" class="modal">
     <span class="close" onclick="closeModal()">&times;</span>
     <img class="modal-content" id="expandedImg" alt="Expanded Image">
