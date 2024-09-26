@@ -11,14 +11,14 @@ require([
   ], function (Map, SceneView, TileLayer, Basemap, FeatureLayer, LayerList, request, Graphic) {
   
     const satelliteLayer = new TileLayer({
-      url: "https:
+      url: "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
       title: "satellite"
-    });
-  
+    })
+    
     const fireflyLayer = new TileLayer({
-      url: "https:
+      url: "https://tiles.arcgis.com/tiles/nGt4QxSblgDfeJn9/arcgis/rest/services/HalfEarthFirefly/MapServer",
       title: "half-earth-firefly"
-    });
+    })
   
     const basemap = new Basemap({
       baseLayers: [satelliteLayer, fireflyLayer],
@@ -27,7 +27,7 @@ require([
     });
   
     const myPlaces = new FeatureLayer({
-      url: 'https:
+      url: "https://services3.arcgis.com/HVjI8GKrRtjcQ4Ry/arcgis/rest/services/My_Places/FeatureServer",
       outFields: ["*"], 
       popupTemplate: {
         title: "My Places: {place_name}", 
@@ -100,14 +100,14 @@ require([
         }),
         f: "json"
       };
-      request("https:
+      request("https://www.arcgis.com/sharing/rest/content/features/generate", {
         query: generateRequestParams,
         body: uploadFormNode,
         responseType: "json"
-      }).then(function (response) {
+    }).then(function (response) {
         addShapefileToMap(response.data.featureCollection);
-        console.log(response);
-      });
+        console.log(response)
+        })
     }
   
     function createFeaturesGraphics(layer) {
